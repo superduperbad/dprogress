@@ -1,0 +1,15 @@
+Subject: Your "{{campaign_title}}" event has been approved!
+
+{% load actionkit_tags %}
+<!-- If a campaign requires event approval, this email gets sent out to event hosts when their event is approved -->
+
+<p>Congratulations! Your "{{campaign_title}}" event has been approved and is now open for signups!</p>
+
+<p>You can start sharing your event at {% endfilter %} <a href="http://{% client_domain %}{{ event.public_url }}">http://{% client_domain %}{{ event.public_url }}</a> with potential attendees. </p> {% filter akid:user|number_links|cleanup_links %}
+
+<p>To use your event tools, visit <a href="https://{% client_ssl_domain %}{{ signup.url }}">https://{% client_ssl_domain %}{{ signup.url }}</a></p>
+
+<p>Thanks again!</p>
+
+<!-- Replacement for unsubscribe -->
+<p><small>You're receiving this message because you set up a "{{campaign_title}}" event.  If you don't want to receive further emails about this event, you can cancel the event using the host tools linked above.</small></p>
