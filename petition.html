@@ -12,25 +12,25 @@
 
     <div class="ak-grid-row">
         
-         <div class="ak-grid-col ak-grid-col-5-of-12 align-right ak-field-box-parent">
+         <div class="ak-grid-col ak-grid-col-5-of-12 align-right ak-sticky-parent">
 
             {% include "./progress_meter.html" %}
 
-            <div class="statement-text-wrapper ak-field-box">
-            
-                <h3>Sign the petition</h3>
-                
-                {% if page.custom_fields.featured_image or form.about_text %}
-                           {% if form.statement_leadin %}
-                            <p class="ak-petition-leadin">
-                                {% include_tmpl form.statement_leadin %}
-                                </p>
-                        {% endif %}
-                
+            <div class="statement-text-wrapper ak-field-box ak-sticky">
 
+                {% if page.custom_fields.featured_image or form.about_text %}
+                        {% if form.statement_leadin %}
+                            <h3>
+                                {% include_tmpl form.statement_leadin %}
+                            </h3>
+                        {% else %}
+                            <h3>
+                                Sign the petition:
+                            </h3>
+                        {% endif %}
                 {% endif %}
                 
-                <div id="petition-form" class="ak-styled-fields {{templateset.custom_fields.field_labels_class|default:"ak-labels-overlaid"}} {{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
+                <div id="petition-form" class="ak-styled-fields ak-margin-top-1 {{templateset.custom_fields.field_labels_class|default:"ak-labels-overlaid"}} {{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
                     {% include "./user_form_wrapper.html" %}
                     {% if page.custom_fields.allow_comments == "Yes" %}
                         <div class="ak-field">
@@ -39,14 +39,16 @@
                         </div>
                     {% endif %}
 
-
                     {# Optional TAF {% include "./inline_tellafriend.html" %} #}
 
                     <button type="submit" class="ak-submit-button">Sign</button>
 
+                    {% if page.custom_fields.legal_text %}
                     <p class="legal_text">
-                    {{ page.custom_fields.legal_text }}
+                        {{ page.custom_fields.legal_text }}
                     </p>
+                    {% endif %}
+
                 </div>
             </div>  
         </div>
@@ -60,7 +62,7 @@
                 <img class="ak-featured-img {% if page.goal %}ak-margin-top-1{% endif %}" src="{{page.custom_fields.featured_image}}">
                 {% endif %}
 
-                        <div class="ak-margin-bottom-1 ak-field-box">
+                        <div class="ak-margin-bottom-1 ak-field-box ak-field-box">
                             {% include_tmpl form.statement_text %}
                         </div>
 

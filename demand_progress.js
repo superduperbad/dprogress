@@ -1,5 +1,3 @@
-{% comment %}This is a placeholder for your new template! Include your template in another using {% include "./demand_progress.js" %} or {% extends "./demand_progress.js" %}.{% endcomment %}
-
 /**
 *   Demand Progress - Actionkit JS,
 *   Author: @mvattuone
@@ -17,9 +15,12 @@
 * TODO:  Test in other projects with fixed position sidebar form and refine to make it reusable across orgs.
 */
 
+
+/* Modified by WAWD for DemandProgress ActionKit templates, 9/2017 */
+
 function fixFormToTop(obj) {
   if ($(obj).length !== 0) {
-        formWrapper = $(obj).children(".ak-field-box"),
+        formWrapper = $(obj).children(".ak-sticky"),
         heightOfForm = formWrapper.outerHeight(),
         contentHeight = $('.ak-page-container').outerHeight(),
         lastScrollTop = 0,
@@ -29,7 +30,7 @@ $(window).scroll(function() {
           var distanceToTravel = formDistanceFromTop + (contentHeight - heightOfForm);
           scrollTop = $(window).scrollTop();
       if (scrollTop >= formDistanceFromTop && scrollTop <= distanceToTravel)  {
-          formWrapper.removeClass("relativeBABY").css("top","0px");
+          formWrapper.removeClass("relative").css("top","0px");
           formWrapper.addClass("fixed");
       } else if (scrollTop >= distanceToTravel) {
           formWrapper.removeClass("fixed");
@@ -45,7 +46,7 @@ $(window).scroll(function() {
 $(document).ready(function() {
   //Don't use fixed positioning on sidebar in mobile view.
     $(window).load(function() {
-    var form = $('.ak-field-box-parent');
+    var form = $('.ak-sticky-parent');
     fixFormToTop(form);
     });
  });
