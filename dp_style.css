@@ -35,7 +35,7 @@ a.ak-underline-on-hover:hover{
 }
 
 .relative{
-    position: relative;
+    position: static;
     z-index: 1;
 }
 
@@ -70,6 +70,7 @@ a.ak-underline-on-hover:hover{
 .ak-page-header{
 	border-bottom:24px solid #a11411;
 	height: 72px;
+    padding-top: 4px;
 }
 
 @media screen and (max-width: 500px){
@@ -85,14 +86,18 @@ a.ak-underline-on-hover:hover{
     text-indent:-9999px;
     background-size:400px;
     transition: width 2s linear 1s;
-	margin-top: 4px;
+    margin-top: 0;
 }
 
 @media screen and (max-width: 500px){
+    .ak-page-header{
+        padding-top:4px;
+    }
+
     .ak-page-header-contents h1{
         background-size:210px;
         transition: width 2s linear 1s;
-        margin-top: 8px;
+        margin-top: 0;
     }
 }
 
@@ -238,6 +243,8 @@ textarea#id_comment{
     border: none;
     background-color: #212121;
    -webkit-font-smoothing: antialiased;
+   margin-top: 0;
+   padding-top: 10px; 
 }
 .ak-page-footer a{
     text-decoration: none; 

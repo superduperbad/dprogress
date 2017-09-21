@@ -16,45 +16,8 @@
 
             {% include "./progress_meter.html" %}
 
-            <div class="statement-text-wrapper ak-field-box ak-dp-mobile">
 
-                {% if page.custom_fields.featured_image or form.about_text %}
-                        {% if form.statement_leadin %}
-                            <h3>
-                                {% include_tmpl form.statement_leadin %}
-                            </h3>
-                        {% else %}
-                            <h3>
-                                Sign the petition:
-                            </h3>
-                        {% endif %}
-                {% endif %}
-                
-                <div id="petition-form" class="ak-styled-fields ak-margin-top-1 {{templateset.custom_fields.field_labels_class|default:"ak-labels-overlaid"}} {{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
-                    {% include "./user_form_wrapper.html" %}
-                    {% if page.custom_fields.allow_comments == "Yes" %}
-                        <div class="ak-field">
-                            <label for="id_comment">Comment</label>
-                            <textarea id="id_comment" name="action_comment"></textarea>
-                        </div>
-                    {% endif %}
-
-                    {# Optional TAF {% include "./inline_tellafriend.html" %} #}
-
-                    <button type="submit" class="ak-submit-button">Sign</button>
-
-                    {% if page.custom_fields.legal_text %}
-                    <p class="legal_text">
-                        {{ page.custom_fields.legal_text }}
-                    </p>
-                    {% endif %}
-
-                </div>
-            </div>
-
-
-
-            <div class="ak-sticky-parent ak-dp-desktop">
+            <div class="ak-sticky-parent">
             <div class="statement-text-wrapper ak-field-box ak-sticky ">
 
                 {% if page.custom_fields.featured_image or form.about_text %}
