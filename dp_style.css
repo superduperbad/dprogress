@@ -47,8 +47,6 @@ a.ak-underline-on-hover:hover{
     transition: linear .2s;
 }
 
-body.ak-pagetype-petition button.ak-submit-button{ width: auto; }
-
 @media all and (min-width:750px) {
    .fixed {
    	position:fixed;
@@ -111,8 +109,9 @@ h2 {
     background: #f0f0f0;
 }
 
+body.ak-pagetype-petition button.ak-submit-button,
 button.ak-submit-button,
-button, button{
+button{
     background-color: #030428;
     border-radius: 0;
     transition: .2s;
@@ -123,14 +122,7 @@ button, button{
     border: 1px solid #fff;
     outline: 2px solid #030428;
     font-weight: 600;
-}
-
-
-@media (min-width: 750px) {
-body.ak-pagetype-petition #petition-form button.ak-submit-button{
-    max-width: initial;
-    width: auto;
-    }
+    font-size:1.1em;
 }
 
 body.ak-pagetype-petition button.ak-submit-button:hover,
@@ -139,6 +131,30 @@ button:hover, button:hover{
     outline: 2px solid #9f1719;
 }
 
+@media (max-width: 750px) {
+body.ak-pagetype-petition button.ak-submit-button,
+button.ak-submit-button,
+button{
+    width: 100%;
+    max-width: 380px;
+    }
+}
+
+.dp-petition {
+    font-style: italic;
+    padding-left:40px;
+    padding-right:40px;
+    background-color: #fff;
+    padding-top:10px;
+    padding-bottom:10px;
+    }
+
+@media (max-width: 750px) {
+.dp-petition {
+    padding-left:20px;
+    padding-right:20px;\
+    }
+}
 .ak-btn-short, input[type="submit"].ak-btn-short{
     border: 1px solid #fff;
 }
@@ -169,6 +185,11 @@ button:hover, button:hover{
     height: 38px;
     font-weight: 600;
 }
+
+#ak-survey-questions .ak-field-box select {
+    height: 38px;
+}
+
 
 .ak-styled-fields input[name="zip"], .ak-styled-fields input[name="event_zip"]{ width: 100%; }
 
