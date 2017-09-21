@@ -31,10 +31,12 @@ a.ak-underline-on-hover:hover{
 
 .fixed {
     position:static;
+    z-index: 1;
 }
 
 .relative{
     position: relative;
+    z-index: 1;
 }
 
 /* thanks page */
@@ -44,6 +46,8 @@ a.ak-underline-on-hover:hover{
 .ak-share-button{
     transition: linear .2s;
 }
+
+body.ak-pagetype-petition button.ak-submit-button{ width: auto; }
 
 @media all and (min-width:750px) {
    .fixed {
@@ -154,6 +158,15 @@ button:hover, button:hover{
 
 .ak-pagetype-petition .statement-text-wrapper.ak-field-box{
     border: 1px solid #a01816;
+}
+
+.ak-pagetype-letter #letter-form{
+    border: 1px solid #a01816;
+}
+
+.ak-labels-overlaid label.ak-is-overlaid, .js .ak-labels-overlaid select {
+    height: 38px;
+    font-weight: 600;
 }
 
 .ak-styled-fields input[name="zip"], .ak-styled-fields input[name="event_zip"]{ width: 100%; }

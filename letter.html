@@ -7,7 +7,7 @@
 
     <div class="ak-grid-row">
 
-        <div class="ak-grid-col ak-grid-col-5-of-12 align-right ak-sticky-parent">
+        <div class="ak-grid-col ak-grid-col-5-of-12 align-right">
         
             <h2 class="ak-dp-mobile">{{ page.title }}</h2>
         
@@ -17,6 +17,7 @@
             <img class="ak-featured-img" src="{{page.custom_fields.featured_image}}">
             {% endif %}
 
+            <div class="ak-sticky-parent">
             <div id="letter-form" class="ak-field-box ak-styled-fields ak-sticky {{templateset.custom_fields.field_labels_class|default:"ak-labels-overlaid"}} {{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
             
              <div class="ak-margin-bottom-1 ak-styled-fields">
@@ -46,6 +47,7 @@
                 </p>
                 {% endif %}
 
+                </div>
                 </div>
             </div>
         </div>

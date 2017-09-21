@@ -21,13 +21,14 @@
 function fixFormToTop(obj) {
   if ($(obj).length !== 0) {
         formWrapper = $(obj).children(".ak-sticky"),
-        heightOfForm = formWrapper.outerHeight(),
-        contentHeight = $('.ak-page-container').outerHeight(),
+        heightOfForm = $(".ak-sticky").outerHeight(),
+        contentHeight = $('.ak-page-container').outerHeight() + $('.ak-page-header').outerHeight(),
         lastScrollTop = 0,
         formDistanceFromTop = $(obj).offset().top; //ugh, this should be programmatic...
-console.log(contentHeight);    
+
 $(window).scroll(function() {
-          var distanceToTravel = formDistanceFromTop + (contentHeight - heightOfForm);
+
+          var distanceToTravel = contentHeight - heightOfForm;
           scrollTop = $(window).scrollTop();
       if (scrollTop >= formDistanceFromTop && scrollTop <= distanceToTravel)  {
           formWrapper.removeClass("relative").css("top","0px");

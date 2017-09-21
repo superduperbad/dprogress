@@ -12,10 +12,10 @@
 
     <div class="ak-grid-row">
         
-         <div class="ak-grid-col ak-grid-col-5-of-12 align-right ak-sticky-parent">
+         <div class="ak-grid-col ak-grid-col-5-of-12 align-right">
 
             {% include "./progress_meter.html" %}
-
+            <div class="ak-sticky-parent">
             <div class="statement-text-wrapper ak-field-box ak-sticky">
 
                 {% if page.custom_fields.featured_image or form.about_text %}
@@ -49,6 +49,7 @@
                     </p>
                     {% endif %}
 
+                </div>
                 </div>
             </div>  
         </div>
